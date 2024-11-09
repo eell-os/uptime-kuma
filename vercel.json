@@ -12,5 +12,5 @@
       "dest": "/.output/server/server.js"
     }
   ],
-  "outputDirectory": ".output",
+  "outputDirectory": ".output"
 }
