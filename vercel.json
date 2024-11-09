@@ -13,5 +13,4 @@
     }
   ],
   "outputDirectory": ".output",
-  "runtime": "node20"
 }
