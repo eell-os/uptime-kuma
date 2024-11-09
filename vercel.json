@@ -9,9 +9,9 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/server/server.js"
+      "dest": "/.output/server/server.js"
     }
   ],
-  "installCommand": "npm install && npm run setup",
-  "startCommand": "node server/server.js"
+  "outputDirectory": ".output",
+  "runtime": "node16"
 }
