@@ -10,6 +10,14 @@
     {
       "src": "/(.*)",
       "dest": "server/server.js"
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
     }
-  ]
+  ],
+  "env": {
+    "UPTIME_KUMA_CONFIG_PATH": "/var/task/config",
+    "UPTIME_KUMA_DATA_PATH": "/var/task/data"
+  }
 }
