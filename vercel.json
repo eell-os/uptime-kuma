@@ -1,23 +1,14 @@
-{
-"version": 2,
-"builds": [
-{
-"src": "server/server.js",
-"use": "@vercel/node"
-}
-],
-"routes": [
-{
-"src": "/(.)",
-"dest": "server/server.js"
-},
-{
-"src": "/static/(.)",
-"dest": "/static/$1"
-}
-],
-"env": {
-"UPTIME_KUMA_CONFIG_PATH": "/var/task/config",
-"UPTIME_KUMA_DATA_PATH": "/var/task/data"
-}
-}
+version: '3.8'
+
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    restart: always
+    ports:
+      - "3001:3001"
+    volumes:
+      - uptime-kuma-data:/app/data
+
+volumes:
+  uptime-kuma-data:
