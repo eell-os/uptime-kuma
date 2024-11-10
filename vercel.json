@@ -2,18 +2,22 @@
   "version": 2,
   "builds": [
     {
-      "src": "server/server.js",
-      "use": "@vercel/node"
+      "src": "package.json",
+      "use": "@vercel/node",
+      "config": {
+        "command": "npm run build",
+        "outputDirectory": "dist"
+      }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "server/server.js"
+      "dest": "/dist/server/server.js"
     },
     {
       "src": "/static/(.*)",
-      "dest": "/static/$1"
+      "dest": "/dist/static/$1"
     }
   ],
   "env": {
