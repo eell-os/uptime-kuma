@@ -1,23 +1,23 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "deploy.sh",
-      "use": "@vercel/shell"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "uptime-kuma/dist/server/server.js"
-    },
-    {
-      "src": "/static/(.*)",
-      "dest": "uptime-kuma/dist/static/$1"
-    }
-  ],
-  "env": {
-    "UPTIME_KUMA_CONFIG_PATH": "/var/task/config",
-    "UPTIME_KUMA_DATA_PATH": "/var/task/data"
-  }
+"version": 2,
+"builds": [
+{
+"src": "server/server.js",
+"use": "@vercel/node"
+}
+],
+"routes": [
+{
+"src": "/(.)",
+"dest": "server/server.js"
+},
+{
+"src": "/static/(.)",
+"dest": "/static/$1"
+}
+],
+"env": {
+"UPTIME_KUMA_CONFIG_PATH": "/var/task/config",
+"UPTIME_KUMA_DATA_PATH": "/var/task/data"
+}
 }
