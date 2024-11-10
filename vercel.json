@@ -3,17 +3,17 @@
   "builds": [
     {
       "src": "deploy.sh",
-      "use": "@vercel/script"
+      "use": "@vercel/shell"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/home/eell/uptime-kuma/dist/server/server.js"
+      "dest": "uptime-kuma/dist/server/server.js"
     },
     {
       "src": "/static/(.*)",
-      "dest": "/home/eell/uptime-kuma/dist/static/$1"
+      "dest": "uptime-kuma/dist/static/$1"
     }
   ],
   "env": {
